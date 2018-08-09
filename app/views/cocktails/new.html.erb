@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+<h1>Add a new Tremendous Cocktail</h1>
+<%= simple_form_for [@cocktail] do |f| %>
+  <%= f.input :name %>
+  <!-- <%= f.input :ingredients, collection: @ingredients, class: 'select2', multiple: true  %> -->
+  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+<% end %>
+</div>
+  </div>
+</div>
