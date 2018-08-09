@@ -1,7 +1,13 @@
+<div class="banner" style="background-image: url('<%= image_path @cocktail.photo.url(:cocktail_banner) %>')">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-6 offset-sm-3">
-<h1><%= @cocktail.name %></h1>
+      <h1>Recipe</h1>
 <ul>
 <% @cocktail.doses.each do |dose| %>
 <li><%= dose.ingredient.name %>: <%= dose.description %>  <%= link_to dose_path(dose), method: :delete do %><i class="fas fa-trash-alt"></i><% end %></li>
@@ -9,8 +15,9 @@
 </ul>
 
 
-<%= link_to "All the Tremendous Cocktails", cocktails_path, class: "btn btn-primary" %>
-<h1>Add The Recipe for <%= @cocktail.name %></h1>
+<br />
+<br />
+<h2>Add something to <%= @cocktail.name %></h2>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
 <% if @dose.errors.any? %>
   <div class="errors-container">
